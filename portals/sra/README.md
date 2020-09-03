@@ -204,14 +204,14 @@ Redeem a prepaid voucher for airtime or data/voice bundles.
  
 * **Error Response:**
 
-  * **Code:** 401 <br />
+  * **Code:** 400 <br />
     **Content:** 
       ```
       {
-      "SRAError":{
-      "errorDesc":"Invalid username or password",
-      "errorType":"business",
-      "errorCode":"SRA-0003"
-      }
+         "SRAError": {
+           "errorDesc": "Sorry! The Voucher PIN entered could not be processed. Please contact Smile Customer Care on +234702044444 for assistance.",
+           "errorType": "BUSINESS",
+           "errorCode": "SRA-0013"
+         }
       }
       ```
