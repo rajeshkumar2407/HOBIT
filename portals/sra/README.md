@@ -159,3 +159,64 @@ User must need to have valid token to access Smile portal APIs. provide a vaid u
       }
       }
       ```
+
+## Redeem Voucher
+
+Redeem a prepaid voucher for airtime or data/voice bundles. 
+
+* **URL**
+
+  /sra/accounts/{account_id}/redeemvoucher/{voucher_pin}
+
+* **Method:**
+
+  `POST`
+    
+*  **URL Params**
+
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | account_id            | Y        | customer's account number           |
+  | voucher_pin           | Y        | prepaid voucher pin                 |
+
+* **Query Params**
+
+   None
+  
+* **Request Body:**
+
+   None
+   
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** 
+      ```
+      {
+      "token": {
+        "username": "admin",
+        "tokenUUID": "ab394518-6c24-4330-bb38-65c9ae1845c4",
+        "originatingIP": "0:0:0:0:0:0:0:1",
+        "version": 1.0,
+        "expires": 1576667359617,
+        "groups": [
+        "Customer"
+        ],
+        "customerId": 101
+      }
+      }
+      ```
+ 
+* **Error Response:**
+
+  * **Code:** 401 <br />
+    **Content:** 
+      ```
+      {
+      "SRAError":{
+      "errorDesc":"Invalid username or password",
+      "errorType":"business",
+      "errorCode":"SRA-0003"
+      }
+      }
+      ```
