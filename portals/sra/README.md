@@ -172,13 +172,19 @@ Redeem a prepaid voucher for airtime or data/voice bundles.
 
   `POST`
     
+*  **Header Params**
+
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | X-token               | Y        | authentication token                |
+
 *  **URL Params**
 
   | Parameter             | Required | Description                         |
   | --------------------- |:--------:| -----------------------------------:|
   | account_id            | Y        | customer's account number           |
   | voucher_pin           | Y        | prepaid voucher pin                 |
-
+  
 * **Query Params**
 
    None
