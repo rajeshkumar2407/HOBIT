@@ -193,17 +193,12 @@ Redeem a prepaid voucher for airtime or data/voice bundles.
     **Content:** 
       ```
       {
-      "token": {
-        "username": "admin",
-        "tokenUUID": "ab394518-6c24-4330-bb38-65c9ae1845c4",
-        "originatingIP": "0:0:0:0:0:0:0:1",
-        "version": 1.0,
-        "expires": 1576667359617,
-        "groups": [
-        "Customer"
-        ],
-        "customerId": 101
-      }
+          "expiryDate": 1601720308930,
+          "unitCreditSpecificationId": 102,
+          "prepaidStripId": 9,
+          "valueInCents": 120000.0,
+          "unitCreditName": "1GB data plan",
+          "status": "RE" // RE - Redemed
       }
       ```
  
