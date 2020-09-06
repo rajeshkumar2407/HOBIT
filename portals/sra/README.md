@@ -333,7 +333,7 @@ Get accounts of logged in user for smile number.
         }
       }
       ```
-## Get Bundle
+## Get Bundles
 
 Get list of all the bundles available for the logged in user. 
 
