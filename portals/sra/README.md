@@ -333,6 +333,78 @@ Get accounts of logged in user for smile number.
         }
       }
       ```
+## Get Bundle
+
+Get list of all the bundles available for the logged in user. 
+
+* **URL**
+
+  /sra/catalogs/bundles
+
+* **Method:**
+
+  `GET`
+    
+*  **Header Params**
+
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | X-token               | Y        | authentication token                |
+
+*  **Query Params**
+
+   None  
+  
+* **Request Body:**
+
+   None
+   
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** 
+      ```
+      [
+      {
+        "itemNumber": "BUNPCG1001",
+        "purchaseRoles": "Customer",
+        "configuration": "",
+        "priceInCents": 0.0,
+        "filterClass": "NeverAllowFilterClass",
+        "description": "AlwaysOn Internet with speed up to 3Mbps valid 30 days",
+        "units": 2.0E11,
+        "priority": 0,
+        "availableFrom": 1562191200000,
+        "availableTo": 1924898400000,
+        "unitType": "Byte",
+        "usableDays": 30,
+        "wrapperClass": "ContainerUnitCredit",
+        "unitCreditSpecificationId": 515,
+        "name": "Freedom 3Mbps",
+        "productServiceMappings": [
+            {
+                "productSpecificationId": 0,
+                "serviceSpecificationId": 18
+            }
+        ],
+        "validityDays": 37
+       }
+      ]
+      ```
+ 
+* **Error Response:**
+      
+  * **Code:** 401 <br />
+    **Content:** 
+      ```
+      {
+        "SRAError": {
+          "errorDesc": "Token is invalid or expired -- f13db56a-5078-48b6-a771-cb9d17546752",
+          "errorType": "business",
+          "errorCode": "SRA-0003"
+        }
+      }
+      ```
 
 ## Redeem Voucher
 
