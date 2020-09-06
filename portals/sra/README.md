@@ -197,8 +197,8 @@ Get accounts of logged in users.
     **Content:** 
       ```
       {
-      "accounts": [
-        {
+         "accounts": [
+         {
             "smileVoiceNo": "07020211495",
             "account": {
                 "availableBalanceInCents": 1341100.0,
@@ -258,8 +258,8 @@ Get accounts of logged in users.
                 "status": 8
             },
             "friendlyName": "Office"
-        },
-        {
+            },
+            {
             "smileVoiceNo": "07020029392",
             "account": {
                 "availableBalanceInCents": 908000.0,
@@ -359,9 +359,9 @@ Get accounts of logged in users.
                 "status": 8
             },
             "friendlyName": "Home"
-        }
-       ]
-      }
+            }
+            ]
+        }
       ```
  
 * **Error Response:**
