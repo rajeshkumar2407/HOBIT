@@ -159,6 +159,224 @@ User must need to have valid token to access Smile portal APIs. provide a vaid u
       }
       }
       ```
+## Get Accounts
+
+Get accounts of logged in users. 
+
+* **URL**
+
+  /sra/customers/{customer_id}/smilevoiceaccounts
+
+* **Method:**
+
+  `GET`
+    
+*  **Header Params**
+
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | X-token               | Y        | authentication token                |
+
+*  **URL Params**
+
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | customer_id           | Y        | customer's profile id               |
+  
+* **Query Params**
+
+   None
+  
+* **Request Body:**
+
+   None
+   
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** 
+      ```
+      {
+      "accounts": [
+        {
+            "smileVoiceNo": "07020211495",
+            "account": {
+                "availableBalanceInCents": 1341100.0,
+                "unitCredits": [
+                    {
+                        "purchaseDate": 1585737652000,
+                        "endDate": 1588934452000,
+                        "extTxId": "Split_5576841",
+                        "priceInCents": 0.0,
+                        "productInstanceId": 435539,
+                        "currentUnitsRemaining": 5.24288E8,
+                        "unitCreditInstanceId": 5576855,
+                        "unitsAtStart": 5.24288E8,
+                        "expiryDate": 1588934452000,
+                        "unitType": "Byte",
+                        "accountId": 1909000000,
+                        "unitCreditSpecificationId": 523,
+                        "availableUnitsRemaining": 5.24288E8,
+                        "unitCreditDescription": "Part Of 1.5GB Plan",
+                        "name": "1GB DataPlan",
+                        "saleLineId": 12569749,
+                        "startDate": 1585737652000,
+                        "info": "DaysGapBetweenStart=0\r\nToAccountId=1412002181\r\nNoKits=true\r\nSplit=true"
+                    },
+                    {
+                        "purchaseDate": 1585737652000,
+                        "endDate": 1588934452000,
+                        "extTxId": "Split_5576841",
+                        "priceInCents": 0.0,
+                        "productInstanceId": 435539,
+                        "currentUnitsRemaining": 120400.0,
+                        "unitCreditInstanceId": 5576909,
+                        "unitsAtStart": 120400.0,
+                        "expiryDate": 1588934452000,
+                        "unitType": "Byte",
+                        "accountId": 1909000000,
+                        "unitCreditSpecificationId": 523,
+                        "availableUnitsRemaining": 120400.0,
+                        "unitCreditDescription": "Part Of 1.5GB Plan",
+                        "name": "1GB DataPlan",
+                        "saleLineId": 12569749,
+                        "startDate": 1585737652000,
+                        "info": "DaysGapBetweenStart=0\r\nToAccountId=1412002181\r\nNoKits=true\r\nSplit=true"
+                    }
+                ],
+                "accountId": 1909000000,
+                "currentBalanceInCents": 1341100.0,
+                "reservations": [],
+                "accountSummary": {
+                    "resultsReturned": 0,
+                    "periodSummaries": []
+                },
+                "accountHistory": {
+                    "resultsReturned": 0,
+                    "transactionRecords": []
+                },
+                "status": 8
+            },
+            "friendlyName": "Office"
+        },
+        {
+            "smileVoiceNo": "07020029392",
+            "account": {
+                "availableBalanceInCents": 908000.0,
+                "unitCredits": [
+                    {
+                        "purchaseDate": 1585737652000,
+                        "endDate": 1588329652000,
+                        "extTxId": "UNIQUE-UC-SaleLine-12569749",
+                        "priceInCents": 0.0,
+                        "productInstanceId": 38217,
+                        "currentUnitsRemaining": 5.49333424E8,
+                        "unitCreditInstanceId": 5576841,
+                        "unitsAtStart": 1.073741824E9,
+                        "expiryDate": 1588934452000,
+                        "unitType": "Byte",
+                        "accountId": 1412002181,
+                        "unitCreditSpecificationId": 523,
+                        "availableUnitsRemaining": 5.49333424E8,
+                        "unitCreditDescription": "Part Of 1.5GB Plan",
+                        "name": "1GB DataPlan",
+                        "saleLineId": 12569749,
+                        "startDate": 1585737652000,
+                        "info": "DaysGapBetweenStart=0\r\nToAccountId=1412002181\r\nNoKits=true"
+                    },
+                    {
+                        "purchaseDate": 1585737653000,
+                        "endDate": 1588329652000,
+                        "extTxId": "UNIQUE-UC-SaleLine-12569749",
+                        "priceInCents": 0.0,
+                        "productInstanceId": 38217,
+                        "currentUnitsRemaining": 300000.0,
+                        "unitCreditInstanceId": 5576843,
+                        "unitsAtStart": 300000.0,
+                        "expiryDate": 1588934452000,
+                        "unitType": "Second",
+                        "accountId": 1412002181,
+                        "unitCreditSpecificationId": 343,
+                        "availableUnitsRemaining": 300000.0,
+                        "unitCreditDescription": "Free Onnet Voice (365 days worth of Free Onnet Voice seconds)",
+                        "name": "Free Onnet Voice",
+                        "saleLineId": 12569749,
+                        "startDate": 1585737652000,
+                        "info": "ParentUCI=5576841"
+                    },
+                    {
+                        "purchaseDate": 1585737655000,
+                        "endDate": 1588329652000,
+                        "extTxId": "UNIQUE-UC-SaleLine-12569749",
+                        "priceInCents": 0.0,
+                        "productInstanceId": 38217,
+                        "currentUnitsRemaining": 1000.0,
+                        "unitCreditInstanceId": 5576845,
+                        "unitsAtStart": 1000.0,
+                        "expiryDate": 1588934452000,
+                        "unitType": "SMS",
+                        "accountId": 1412002181,
+                        "unitCreditSpecificationId": 502,
+                        "availableUnitsRemaining": 1000.0,
+                        "unitCreditDescription": "Free Onnet SMS",
+                        "name": "Free Onnet SMS",
+                        "saleLineId": 12569749,
+                        "startDate": 1585737652000,
+                        "info": "ParentUCI=5576841"
+                    },
+                    {
+                        "purchaseDate": 1585737655000,
+                        "endDate": 1588329655000,
+                        "extTxId": "UNIQUE-UC-SaleLine-12569749",
+                        "priceInCents": 0.0,
+                        "productInstanceId": 38217,
+                        "currentUnitsRemaining": 5.36870912E8,
+                        "unitCreditInstanceId": 5576847,
+                        "unitsAtStart": 5.36870912E8,
+                        "expiryDate": 1588934455000,
+                        "unitType": "Byte",
+                        "accountId": 1412002181,
+                        "unitCreditSpecificationId": 524,
+                        "availableUnitsRemaining": 5.36870912E8,
+                        "unitCreditDescription": "Part Of 1.5GB Plan",
+                        "name": "500MB  Data Plan",
+                        "saleLineId": 12569749,
+                        "startDate": 1585737655000,
+                        "info": "DaysGapBetweenStart=0\r\nToAccountId=1412002181\r\nNoKits=true"
+                    }
+                ],
+                "accountId": 1412002181,
+                "currentBalanceInCents": 908000.0,
+                "reservations": [],
+                "accountSummary": {
+                    "resultsReturned": 0,
+                    "periodSummaries": []
+                },
+                "accountHistory": {
+                    "resultsReturned": 0,
+                    "transactionRecords": []
+                },
+                "status": 8
+            },
+            "friendlyName": "Home"
+        }
+       ]
+      }
+      ```
+ 
+* **Error Response:**
+
+  * **Code:** 400 <br />
+    **Content:** 
+      ```
+      {
+         "SRAError": {
+           "errorDesc": "Sorry! The Voucher PIN entered could not be processed. Please contact Smile Customer Care on +234702044444 for assistance.",
+           "errorType": "BUSINESS",
+           "errorCode": "SRA-0013"
+         }
+      }
+      ```
 
 ## Redeem Voucher
 
