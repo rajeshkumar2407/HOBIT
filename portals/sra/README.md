@@ -263,6 +263,81 @@ Get personal details for loged in user.
       }
       ```
       
+## Get Customer Without Token
+
+Get personal details of a customer without using token. 
+
+* **URL**
+
+  /sra/smilecustomer?identity={email | username | smielnumber}
+
+* **Method:**
+
+  `GET`
+    
+*  **Header Params**
+
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | X-token               | Y        | authentication token                |
+
+*  **URL Params**
+
+   None
+  
+* **Query Params**
+
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | identity              | Y        |  username or email or smile number  |
+  
+* **Request Body:**
+
+   None
+   
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** 
+      ```
+      {
+        "customerId": 32450,
+        "title": "",
+        "firstName": "rajesh",
+        "middleName": "",
+        "lastName": "kumar",
+        "alternativeContact1": "11132450",
+        "alternativeContact2": "22232450",
+        "emailAddress": "rajesh.kumar@smilecoms.com"
+      }
+      ```
+ 
+* **Error Response:**
+
+  * **Code:** 404 <br />
+    **Content:** 
+      ```
+      {
+        "SRAError": {
+          "errorDesc": "Customer not found",
+          "errorType": "business",
+          "errorCode": "SRA-0053"
+        }
+      }
+      ```
+      
+  * **Code:** 401 <br />
+    **Content:** 
+      ```
+      {
+        "SRAError": {
+          "errorDesc": "Token is invalid or expired -- f13db56a-5078-48b6-a771-cb9d17546752",
+          "errorType": "business",
+          "errorCode": "SRA-0003"
+        }
+      }
+      ```
+      
 ## Get Accounts
 
 Get accounts of logged in users. 
