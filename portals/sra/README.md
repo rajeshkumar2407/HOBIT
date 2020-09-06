@@ -200,6 +200,7 @@ Get accounts of logged in users.
       "accounts": [
         {
             "smileVoiceNo": "07020211495",
+            "unitCreditConfig": [],
             "account": {
                 "availableBalanceInCents": 1341100.0,
                 "unitCredits": [
@@ -217,7 +218,7 @@ Get accounts of logged in users.
                         "accountId": 1909000000,
                         "unitCreditSpecificationId": 523,
                         "availableUnitsRemaining": 5.24288E8,
-                        "unitCreditDescription": "Part Of 1.5GB Plan",
+                        "unitCreditDescription": "1.5GB Plan",
                         "name": "1GB DataPlan",
                         "saleLineId": 12569749,
                         "startDate": 1585737652000,
@@ -239,21 +240,34 @@ Get accounts of logged in users.
             },
             "friendlyName": "Office"
             }
-         ]
+         ],
+         "notifications": 0
       }
       ```
  
 * **Error Response:**
 
-  * **Code:** 400 <br />
+  * **Code:** 404 <br />
     **Content:** 
       ```
       {
-         "SRAError": {
-           "errorDesc": "Sorry! The Voucher PIN entered could not be processed. Please contact Smile Customer Care on +234702044444 for assistance.",
-           "errorType": "BUSINESS",
-           "errorCode": "SRA-0013"
-         }
+        "SRAError": {
+          "errorDesc": "Customer not found",
+          "errorType": "BUSINESS",
+          "errorCode": "SRA-00013"
+        }
+      }
+      ```
+      
+  * **Code:** 401 <br />
+    **Content:** 
+      ```
+      {
+        "SRAError": {
+          "errorDesc": "Token is invalid or expired -- f13db56a-5078-48b6-a771-cb9d17546752",
+          "errorType": "business",
+          "errorCode": "SRA-0003"
+        }
       }
       ```
 
