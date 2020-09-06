@@ -270,6 +270,69 @@ Get accounts of logged in users.
         }
       }
       ```
+## Get Account for smile number
+
+Get accounts of logged in user for smile number. 
+
+* **URL**
+
+  /sra/customers/smilevoiceaccounts?smileVoiceNo={smile_number}
+
+* **Method:**
+
+  `GET`
+    
+*  **Header Params**
+
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | X-token               | Y        | authentication token                |
+
+*  **Query Params**
+
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | smile_number          | Y        | customers smile voice number        |
+  
+  
+* **Request Body:**
+
+   None
+   
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** 
+      ```
+      {
+        "account_id": "1303000023",
+        "customer_id": "520"
+      }
+      ```
+ 
+* **Error Response:**
+
+  * **Code:** 400 <br />
+    **Content:** 
+      ```
+      {
+        "errorDesc": "invalid smile voice number",
+        "errorType": "BUSINESS",
+        "errorCode": "SRA-0001"
+      }
+      ```
+      
+  * **Code:** 401 <br />
+    **Content:** 
+      ```
+      {
+        "SRAError": {
+          "errorDesc": "Token is invalid or expired -- f13db56a-5078-48b6-a771-cb9d17546752",
+          "errorType": "business",
+          "errorCode": "SRA-0003"
+        }
+      }
+      ```
 
 ## Redeem Voucher
 
