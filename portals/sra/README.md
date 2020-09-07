@@ -17,6 +17,7 @@
     - [Sale Bundle Using Airtime](#sale-bundle-using-airtime)
     - [Share Airtime](#share-airtime)
     - [Share Data](#share-data)
+    - [Device Details](#device-details)
 
 
 ## Registration
@@ -645,4 +646,69 @@ Redeem a prepaid voucher for airtime or data/voice bundles.
            "errorCode": "SRA-0013"
          }
       }
+      ```
+
+## Device Details
+
+Get details of all the available devices in selected customers account. 
+
+* **URL**
+
+  /sra/accounts/{account_id}/products
+
+* **Method:**
+
+  `GET`
+    
+*  **Header Params**
+
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | X-token               | Y        | authentication token                |
+
+*  **URL Params**
+
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | account_id            | Y        | customer's account number           |
+  
+* **Query Params**
+
+   None
+  
+* **Request Body:**
+
+   None
+   
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** 
+      ```
+      [
+      {
+        "serialNumber": "2993929994938112",
+        "lastUsedDate": "2020-09-07 12:23:20",
+        "description": "Sim Cards",
+        "purchageDate": "2020-07-01 09:23:32",
+        "activationDate": "2020-07-01 12:30:40",
+        "deviceName": "SIM"
+      },
+      {
+        "serialNumber": "2993929994938112",
+        "lastUsedDate": "2020-09-07 12:23:20",
+        "description": "Mobile Router Franklin B711 LTE",
+        "purchageDate": "2020-07-01 09:23:32",
+        "activationDate": "2020-07-01 12:30:40",
+        "deviceName": "MIF6000"
+      }
+      ]
+      ```
+ 
+* **Error Response:**
+
+  * **Code:** 400 <br />
+    **Content:** 
+      ```
+      TODO
       ```
