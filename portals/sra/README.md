@@ -9,6 +9,7 @@
     - [Forget Password](#forget-password)
     - [Get Accounts](#get-accounts)
     - [Get Account for smile number](#get-account-for-smile-number)
+    - [Get Account History](#get-account-history)
     - [Get Bundles](#get-bundles)
     - [Redeem Voucher](#redeem-voucher)
     - [Sale Airtime Using Payment Gateway](#sale-airtime-using-payment-gateway)
