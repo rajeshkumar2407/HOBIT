@@ -398,7 +398,53 @@ Reset or change customers password.
         }
       }
       ```
- 
+## Forget Password
+
+API to rest password using OTP. 
+
+* **URL**
+
+  /sra/changepwdbyotp
+
+* **Method:**
+
+  `POST`
+    
+*  **Header Params**
+
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | X-token               | Y        | authentication token                |
+
+*  **URL Params**
+
+  None
+  
+* **Query Params**
+
+  None
+  
+* **Request Body:**
+
+   ```
+   {
+    "customerId":1394431,
+    "identity":"09876485982", //OTP mobile number
+    "key":"594432", // OTP Code. Valid for 15 Min
+    "newPassword":"test123",
+    "confirmPassword":"test123"
+   }
+   ```
+   
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** 
+      ```
+      {
+        "done": true
+      }
+      ```      
  
 ## Get Accounts
 
