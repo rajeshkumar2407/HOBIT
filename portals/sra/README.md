@@ -339,7 +339,67 @@ Get personal details of a customer without using token.
         }
       }
       ```
+
+## Change Password
+
+Reset or change customers password. 
+
+* **URL**
+
+  /sra/customers/{customer_id}/changepassword
+
+* **Method:**
+
+  `PUT`
+    
+*  **Header Params**
+
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | X-token               | Y        | authentication token                |
+
+*  **URL Params**
+
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | customer_id           | Y        | customer id                         |
+  
+* **Query Params**
+
+  None
+  
+* **Request Body:**
+
+   ```
+   {
+     "newPassword": "newpassword",
+     "confirmPassword": "newpassword"
+   }
+   ```
+   
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** 
+      ```
+      {
+        "done": true
+      }
+      ```
       
+  * **Code:** 401 <br />
+    **Content:** 
+      ```
+      {
+        "SRAError": {
+          "errorDesc": "Token is invalid or expired -- f13db56a-5078-48b6-a771-cb9d17546752",
+          "errorType": "business",
+          "errorCode": "SRA-0003"
+        }
+      }
+      ```
+ 
+ 
 ## Get Accounts
 
 Get accounts of logged in users. 
