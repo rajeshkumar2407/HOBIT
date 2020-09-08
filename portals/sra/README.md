@@ -514,6 +514,136 @@ Get accounts of logged in user for smile number.
         }
       }
       ```
+ ## Get Account History
+
+Get accounts usage history. 
+
+* **URL**
+
+  /sra/accounts/{account_no}/allhistory?dateFrom={from_date}&dateTo={to_date}&resultLimit={record_size}&recordType={record_type}
+
+* **Method:**
+
+  `GET`
+    
+*  **Header Params**
+
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | X-token               | Y        | authentication token                |
+
+*  **URL Params**
+
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | account_no            | Y        | customer's account no               |
+  
+* **Query Params**
+
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | dateFrom              | N        | record start date                   |
+  | dateTo                | N        | record end date                     |
+  | resultLimit           | N        | number of records                   |
+  | recordType            | N        | type of records                     |
+  
+* **Request Body:**
+
+   None
+   
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** 
+      ```
+      {
+      "resultsReturned": 3,
+      "transactionRecords": [
+         {
+            "amountInCents": 0.0,
+            "unitCreditBaselineUnits": 0.0,
+            "endDate": "2020-06-08T19:45:05.000+02:00",
+            "extTxId": "UNIQUE-UC-SaleLine-12570211",
+            "unitCreditUnits": 0.0,
+            "destination": "",
+            "ipAddress": "",
+            "description": "Purchase 5GB Data Plan",
+            "serviceInstanceId": 0,
+            "source": "",
+            "serviceInstanceIdentifier": "",
+            "totalUnits": 0.0,
+            "transactionType": "txtype.uc.purchase",
+            "accountId": 1303000023,
+            "transactionRecordId": 1830762761,
+            "accountBalanceRemainingInCents": 587232.27,
+            "location": "",
+            "startDate": "2020-06-08T19:45:05.000+02:00",
+            "info": "SaleLineId=12570211\r\nnull",
+            "status": "FI",
+            "termCode": ""
+          },
+          {
+            "amountInCents": 0.0,
+            "unitCreditBaselineUnits": 0.0,
+            "endDate": "2020-06-08T19:45:04.000+02:00",
+            "extTxId": "UNIQUE-UC-SaleLine-12570211",
+            "unitCreditUnits": 0.0,
+            "destination": "",
+            "ipAddress": "",
+            "description": "Purchase Free Onnet SMS (5578083)",
+            "serviceInstanceId": 0,
+            "source": "",
+            "serviceInstanceIdentifier": "",
+            "totalUnits": 0.0,
+            "transactionType": "txtype.uc.purchase",
+            "accountId": 1303000023,
+            "transactionRecordId": 1830762759,
+            "accountBalanceRemainingInCents": 587232.27,
+            "location": "",
+            "startDate": "2020-06-08T19:45:04.000+02:00",
+            "info": "SaleLineId=12570211\r\nSMS_VAT",
+            "status": "FI",
+            "termCode": ""
+          },
+          {
+            "amountInCents": 0.0,
+            "unitCreditBaselineUnits": 0.0,
+            "endDate": "2020-06-08T19:45:04.000+02:00",
+            "extTxId": "UNIQUE-UC-SaleLine-12570211",
+            "unitCreditUnits": 0.0,
+            "destination": "",
+            "ipAddress": "",
+            "description": "Purchase Free Onnet Voice (5578081)",
+            "serviceInstanceId": 0,
+            "source": "",
+            "serviceInstanceIdentifier": "",
+            "totalUnits": 0.0,
+            "transactionType": "txtype.uc.purchase",
+            "accountId": 1303000023,
+            "transactionRecordId": 1830762757,
+            "accountBalanceRemainingInCents": 587232.27,
+            "location": "",
+            "startDate": "2020-06-08T19:45:04.000+02:00",
+            "info": "SaleLineId=12570211\r\nVoice_VAT",
+            "status": "FI",
+            "termCode": ""
+          }
+        ]
+      }
+      ```
+    
+  * **Code:** 401 <br />
+    **Content:** 
+      ```
+      {
+        "SRAError": {
+          "errorDesc": "Token is invalid or expired -- f13db56a-5078-48b6-a771-cb9d17546752",
+          "errorType": "business",
+          "errorCode": "SRA-0003"
+        }
+      }
+      ```
+      
 ## Get Bundles
 
 Get list of all the bundles available for the logged in user. 
