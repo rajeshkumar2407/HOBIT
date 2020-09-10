@@ -862,12 +862,13 @@ Redeem a prepaid voucher for airtime or data/voice bundles.
     **Content:** 
       ```
       {
-          "expiryDate": 1601720308930,
-          "unitCreditSpecificationId": 102,
-          "prepaidStripId": 9,
-          "valueInCents": 120000.0,
-          "unitCreditName": "1GB data plan",
-          "status": "RE" // RE - Redemed
+        "usableDays": 365, // Validity period in Days
+        "unitCreditSpecificationId": 103, // 0 for Airtime voucher
+        "prepaidStripId": 11,
+        "units": 1.073741824E10, // In bytes for Data bundles. 0.0 for airtime voucher
+        "valueInCents": 120000.0,
+        "unitCreditName": "10GB Anytime",
+        "status": "RE"
       }
       ```
  
