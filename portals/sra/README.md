@@ -996,7 +996,7 @@ Get list of in-app notifications for logged in user.
         "type": "recharge",
         "info": "https://smile.com.ng/",
         "status": "UR"
-      ,
+      },
       {
         "date": "2020-09-09 17:03:31",
         "customerId": 520,
