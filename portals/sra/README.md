@@ -19,6 +19,7 @@
     - [Share Airtime](#share-airtime)
     - [Share Data](#share-data)
     - [Device Details](#device-details)
+    - [Get Notifications](#get-notifications)
 
 
 ## Registration
@@ -949,4 +950,74 @@ Get details of all the available devices in selected customers account.
     **Content:** 
       ```
       TODO
+      ```
+
+## Get Notifications
+
+Get list of in-app notifications for logged in user. 
+
+* **URL**
+
+  /sra/customers/{customer_id}/notification
+
+* **Method:**
+
+  `GET`
+    
+*  **Header Params**
+
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | X-token               | Y        | authentication token                |
+
+*  **URL Params**
+
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | customer_id           | Y        | customer profile id                 |
+  
+  
+* **Request Body:**
+
+   None
+   
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** 
+      ```
+      [
+      {
+        "date": "2020-09-10 13:30:15",
+        "customerId": 520,
+        "notificationId": "e5df3aa3-9d73-47c2-9c0f-f59f4f9b55a3",
+        "message": "20% of your 500MB data plan is left on smile number 07795329934 stay online and upgrade to 2.5 GB FlexiDaily for only N500",
+        "title": "Data Usage Alert",
+        "type": "recharge",
+        "info": "https://smile.com.ng/",
+        "status": "UR"
+      ,
+      {
+        "date": "2020-09-09 17:03:31",
+        "customerId": 520,
+        "notificationId": "f51ee645-ceff-4933-8365-c13e4fde6207",
+        "message": "20% of your 500MB data plan is left on smile number 07795329934 stay online and upgrade to 2.5 GB FlexiDaily for only N500",
+        "title": "Data Usage Alert",
+        "type": "recharge",
+        "info": "https://smile.com.ng/",
+        "status": "UR"
+      }
+      ]
+      ```
+      
+  * **Code:** 401 <br />
+    **Content:** 
+      ```
+      {
+        "SRAError": {
+          "errorDesc": "Token is invalid or expired -- f13db56a-5078-48b6-a771-cb9d17546752",
+          "errorType": "business",
+          "errorCode": "SRA-0003"
+        }
+      }
       ```
