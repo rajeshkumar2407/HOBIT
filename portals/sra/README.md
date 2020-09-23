@@ -206,6 +206,7 @@ Get personal details for loged in user.
         "lastName": "kumar",
         "addresses": [],
         "gender": "M",
+        "kycStatus": "V", // V:Verified, U:Unverifies, P:Pending
         "createdDateTime": 1418491489000,
         "identityNumberType": "",
         "language": "en",
