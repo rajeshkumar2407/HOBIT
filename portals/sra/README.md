@@ -45,11 +45,11 @@
 
   ```
   {
-    "customerId":12345,
-    "identity":"09876485982", //mobile number used for OTP
+    "customerId":12345, // It should be 0 for guest
+    "identity":"09876485982", //Mobile number used for OTP
     "key":"594432", // OTP Code. Valid for 15 Min
-    "newPassword":"test123",
-    "confirmPassword":"test123"
+    "newPassword":"test123", // Not required if customerId is 0
+    "confirmPassword":"test123" //Not required if customerId is 0
   }
   ```
 
