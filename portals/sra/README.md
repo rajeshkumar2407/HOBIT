@@ -191,6 +191,7 @@ Get personal details for loged in user.
   | Parameter             | Required | Description                         |
   | --------------------- |:--------:| -----------------------------------:|
   | by                    | Y        | identifier type. ie id or username  |
+  | verbosity             | N        | CUSTOMER_PHOTO for customer's photo |
   
 * **Request Body:**
 
