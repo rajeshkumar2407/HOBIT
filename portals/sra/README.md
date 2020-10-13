@@ -10,6 +10,7 @@
     - [Get Accounts](#get-accounts)
     - [Get Account for smile number](#get-account-for-smile-number)
     - [Get Account History](#get-account-history)
+    - [Download Account History](#download-account-history)
     - [Get Bundles](#get-bundles)
     - [Redeem Voucher](#redeem-voucher)
     - [Sale Airtime Using Payment Gateway](#sale-airtime-using-payment-gateway)
@@ -752,7 +753,59 @@ Get accounts usage history.
         }
       }
       ```
-      
+ ## Download Account History
+
+Download accounts usage history. 
+
+* **URL**
+
+  /sra/accounts/{account_no}/downloadhistory?dateFrom={from_date}&dateTo={to_date}&resultLimit={record_size}&recordType={record_type}
+
+* **Method:**
+
+  `GET`
+    
+*  **Header Params**
+
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | X-token               | Y        | authentication token                |
+
+*  **URL Params**
+
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | account_no            | Y        | customer's account no               |
+  
+* **Query Params**
+
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | dateFrom              | N        | record start date                   |
+  | dateTo                | N        | record end date                     |
+  | resultLimit           | N        | number of records                   |
+  | recordType            | N        | type of records                     |
+  
+* **Request Body:**
+
+   None
+   
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    
+  * **Code:** 401 <br />
+    **Content:** 
+      ```
+      {
+        "SRAError": {
+          "errorDesc": "Token is invalid or expired -- f13db56a-5078-48b6-a771-cb9d17546752",
+          "errorType": "business",
+          "errorCode": "SRA-0003"
+        }
+      }
+      ```
+
 ## Get Bundles
 
 Get list of all the bundles available for the logged in user. 
