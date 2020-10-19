@@ -21,6 +21,7 @@
     - [Share Data](#share-data)
     - [Device Details](#device-details)
     - [Get Notifications](#get-notifications)
+    - [Update Profile Photo](#update-profile-photo)
 
 
 ## Registration
@@ -1074,5 +1075,48 @@ Get list of in-app notifications for logged in user.
           "errorType": "business",
           "errorCode": "SRA-0003"
         }
+      }
+      ```
+
+## Update Profile Photo
+
+update customer's profile photo. provide the 'file' parameter as attachement in form date. 
+
+* **URL**
+
+  /sra/customers/{customer_id}/updateprofilephoto
+
+* **Method:**
+
+  `POST`
+    
+*  **Header Params**
+
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | X-token               | Y        | authentication token                |
+  | Content-Type          | Y        | multipart/form-data                 |
+
+*  **URL Params**
+
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | customerid            | Y        | customer's profile id               |
+  
+* **Query Params**
+
+   None
+  
+* **Request Body:**
+
+   None
+   
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** 
+      ```
+      {
+        "done": "TRUE
       }
       ```
