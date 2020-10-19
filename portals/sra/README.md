@@ -22,6 +22,7 @@
     - [Device Details](#device-details)
     - [Get Notifications](#get-notifications)
     - [Update Profile Photo](#update-profile-photo)
+    - [Get Profile Photo](#get-profile-photo)
 
 
 ## Registration
@@ -1084,7 +1085,7 @@ update customer's profile photo. provide the 'file' parameter as attachement in 
 
 * **URL**
 
-  /sra/customers/{customer_id}/updateprofilephoto
+  /sra/customers/{customer_id}/uploadprofilephoto
 
 * **Method:**
 
@@ -1119,4 +1120,44 @@ update customer's profile photo. provide the 'file' parameter as attachement in 
       {
         "done": true
       }
+      ```
+      
+## Get Profile Photo
+
+download customer's profile photo. 
+
+* **URL**
+
+  /sra/customers/{customer_id}/downloadprofilephoto
+
+* **Method:**
+
+  `POST`
+    
+*  **Header Params**
+
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | X-token               | Y        | authentication token                |
+
+*  **URL Params**
+
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | customer_id           | Y        | customer's profile id               |
+  
+* **Query Params**
+
+   None
+  
+* **Request Body:**
+
+   None
+   
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** 
+      ```
+      pfofile picture in application/octet-stream response type
       ```
