@@ -1117,6 +1117,6 @@ update customer's profile photo. provide the 'file' parameter as attachement in 
     **Content:** 
       ```
       {
-        "done": "TRUE
+        "done": true
       }
       ```
