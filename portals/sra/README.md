@@ -1132,7 +1132,7 @@ download customer's profile photo.
 
 * **Method:**
 
-  `POST`
+  `GET`
     
 *  **Header Params**
 
