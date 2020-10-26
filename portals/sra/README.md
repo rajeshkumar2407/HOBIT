@@ -943,6 +943,123 @@ Redeem a prepaid voucher for airtime or data/voice bundles.
          }
       }
       ```
+      
+## Sale Airtime Using Payment Gateway
+
+API to buy airtime using payment gateways. 
+
+* **URL**
+
+  /sra/sales/airtime
+
+* **Method:**
+
+  `POST`
+    
+*  **Header Params**
+
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | X-token               | Y        | authentication token                |
+
+*  **URL Params**
+
+   None
+  
+* **Query Params**
+
+   None
+  
+* **Request Body:**
+
+   ```
+   {
+	"sale":{
+		"saleTotalCentsIncl":10000.00,
+		"saleLines":[{"inventoryItem":{"serialNumber":"AIRTIME","description":"AIRTIME","itemNumber":"AIR1004","warehouseId":"","priceInCentsIncl":100.00},"quantity":100}],
+	    "paymentMethod":"Payment Gateway",
+	    "paymentGatewayCode":"Paystack",
+	    "recipientCustomerId":50891,
+	    "recipientAccountId":1504000802,
+	    "warehouseId":""
+    }
+   }
+   ```
+   
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** 
+      ```
+      {
+        "sale": {
+        "saleId": 11028399,
+        "paymentGatewayLastPollDate": 0,
+        "channel": "41WABA01",
+        "tenderedCurrency": "NGN",
+        "saleDate": 1582640641000,
+        "amountTenderedCents": 0.0,
+        "salesPersonCustomerId": 1,
+        "saleLines": [
+            {
+                "lineTotalDiscountOnInclCents": 0.0,
+                "inventoryItem": {
+                    "itemNumber": "AIR1004",
+                    "boxSize": 0,
+                    "priceInCentsExcl": 93.02,
+                    "serialNumber": "AIRTIME",
+                    "warehouseId": "",
+                    "priceInCentsIncl": 100.0,
+                    "description": "Airtime",
+                    "currency": "NGN",
+                    "stockLevel": 100
+                },
+                "quantity": 100,
+                "lineId": 12569575,
+                "parentLineId": 0,
+                "lineTotalCentsIncl": 10000.0,
+                "lineTotalCentsExcl": 9302.33,
+                "subSaleLines": [],
+                "lineTotalDiscountOnExclCents": 0.0,
+                "returns": [],
+                "lineNumber": 1,
+                "provisioningData": ""
+            }
+        ],
+        "paymentGatewayPollCount": 0,
+        "recipientAccountId": 1504000802,
+        "paymentGatewayURL": "https://checkout.paystack.com/3m7qx3k91ss6nie",
+        "tillId": "",
+        "landingURL": "/PaymentGateway.action?processBankTransaction&saleId=11028399",
+        "purchaseOrderData": "",
+        "paymentGatewayCode": "Paystack",
+        "taxExempt": false,
+        "extTxId": "30eda74a-ab02-4c3a-893b-47b2e47821a4",
+        "promotionCode": "",
+        "paymentGatewayURLData": "POST: amount=10000,callback_url=http://41.169.133.180:8004/scp/Login.action?postPaymentRedirect#&OrderId#11028399,reference=11028399,email=50891@smilecoms.com",
+        "creditAccountNumber": "ACC006",
+        "recipientCustomerId": 50891,
+        "organisationName": "",
+        "recipientOrganisationId": 0,
+        "withholdingTaxRate": 0.0,
+        "saleTotalCentsIncl": 10000.0,
+        "salesPersonAccountId": 1711000000,
+        "contractSaleId": 0,
+        "paymentGatewayNextPollDate": 0,
+        "warehouseId": "",
+        "contractId": 0,
+        "paymentMethod": "Payment Gateway",
+        "extraInfo": "",
+        "saleTotalTaxCents": 697.67,
+        "status": "PP"
+        }
+      }
+      ```
+ 
+* **Error Response:**
+
+  * **Code:** 400 <br />
+    **Content:** 
 
 ## Device Details
 
