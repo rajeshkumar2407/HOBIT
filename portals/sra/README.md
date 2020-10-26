@@ -669,8 +669,31 @@ API to share data bundles with other accounts.
     **Content:** 
       ```
       {
-        "account_id": "1303000023",
-        "customer_id": "520"
+        "availableBalanceInCents": 0.0,
+        "accountId": 2002000000,
+        "currentBalanceInCents": 0.0,
+        "unitCreditInstances": [
+        {
+            "unitType": "Byte",
+            "accountId": 2002000000,
+            "unitCreditSpecificationId": 456,
+            "availableUnitsRemaining": 1.610612736E9,
+            "name": "Data Plan - 1.5GB",
+            "productInstanceId": 435625,
+            "currentUnitsRemaining": 1.610612736E9,
+            "unitCreditInstanceId": 5576605
+        },
+        {
+            "unitType": "SMS",
+            "accountId": 2002000000,
+            "unitCreditSpecificationId": 502,
+            "availableUnitsRemaining": 1000.0,
+            "name": "Free Onnet SMS",
+            "productInstanceId": 435625,
+            "currentUnitsRemaining": 1000.0,
+            "unitCreditInstanceId": 5576673
+        }
+        ]
       }
       ```
       
