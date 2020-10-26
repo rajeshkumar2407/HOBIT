@@ -991,7 +991,7 @@ API to buy airtime using payment gateways.
   * **Code:** 200 <br />
     **Content:** 
       ```
-      {
+        {
         "sale": {
         "saleId": 11028399,
         "paymentGatewayLastPollDate": 0,
@@ -1053,13 +1053,124 @@ API to buy airtime using payment gateways.
         "saleTotalTaxCents": 697.67,
         "status": "PP"
         }
-      }
+       }
       ```
  
 * **Error Response:**
 
   * **Code:** 400 <br />
     **Content:** 
+
+## Sale Data Bundle Using Payment Gateway
+
+API to buy data bundles using payment gateway. 
+
+* **URL**
+
+  /sra/sales/bundle?gatewayCode={payment_gateway_code}
+
+* **Method:**
+
+  `POST`
+    
+*  **Header Params**
+
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | X-token               | Y        | authentication token                |
+
+*  **URL Params**
+
+   None
+  
+* **Query Params**
+
+   None
+  
+* **Request Body:**
+
+   ```
+   {
+    "accountId":1303000023,
+    "unitCreditSpecificationId":587,
+    "unitCreditName":"40GB Anytime Plan 37 Days",
+    "itemNumber":"BUN1040", 
+    "productInstanceId":0,
+    "numberToPurchase":1,
+    "paymentMethod":"Payment Gateway",
+    "creditAccountNumber":"1303000023"
+   }
+   ```
+   
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** 
+      ```
+      {
+        "sale": {
+        "saleId": 32541803,
+        "paymentGatewayLastPollDate": 0,
+        "channel": "41WPAY01",
+        "tenderedCurrency": "NGN",
+        "saleDate": 1585054665000,
+        "amountTenderedCents": 0.0,
+        "salesPersonCustomerId": 1,
+        "saleLines": [
+            {
+                "lineTotalDiscountOnInclCents": 0.0,
+                "inventoryItem": {
+                    "itemNumber": "BUN1050",
+                    "boxSize": 0,
+                    "priceInCentsExcl": 3427906.98,
+                    "serialNumber": "",
+                    "warehouseId": "",
+                    "priceInCentsIncl": 3685000.0,
+                    "description": "Data Bundle (50GB)",
+                    "currency": "NGN",
+                    "stockLevel": 1
+                },
+                "quantity": 1,
+                "lineId": 35627023,
+                "parentLineId": 0,
+                "lineTotalCentsIncl": 3685000.0,
+                "lineTotalCentsExcl": 3427906.98,
+                "subSaleLines": [],
+                "lineTotalDiscountOnExclCents": 0.0,
+                "returns": [],
+                "lineNumber": 1,
+                "provisioningData": ""
+            }
+        ],
+        "paymentGatewayPollCount": 0,
+        "recipientAccountId": 2003009622,
+        "paymentGatewayURL": "https://checkout.paystack.com/gzx6a46qocfgnpp",
+        "tillId": "",
+        "landingURL": "/PaymentGateway.action?processBankTransaction&saleId=32541803",
+        "purchaseOrderData": "",
+        "paymentGatewayCode": "Paystack",
+        "taxExempt": false,
+        "extTxId": "d2c2cad3-7ceb-40d8-b8b3-9b0da87825c5",
+        "promotionCode": "",
+        "paymentGatewayURLData": "POST: amount=3685000,callback_url=https://smile.com.ng/scp/Login.action",
+        "creditAccountNumber": "PAY001",
+        "recipientCustomerId": 837195,
+        "organisationName": "",
+        "recipientOrganisationId": 0,
+        "withholdingTaxRate": 0.0,
+        "saleTotalCentsIncl": 3685000.0,
+        "salesPersonAccountId": 1711004212,
+        "contractSaleId": 0,
+        "paymentGatewayNextPollDate": 0,
+        "warehouseId": "",
+        "contractId": 0,
+        "paymentMethod": "Payment Gateway",
+        "extraInfo": "",
+        "saleTotalTaxCents": 257093.02,
+        "status": "PP"
+       }
+      }
+      ```
 
 ## Device Details
 
