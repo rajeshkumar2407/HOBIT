@@ -626,8 +626,149 @@ Get accounts of logged in user for smile number.
         }
       }
       ```
- ## Get Account History
+## Share Data Bundle
+API to share data bundles with other accounts. 
 
+* **URL**
+
+  /sra/accounts/sharedata
+
+* **Method:**
+
+  `POST`
+    
+*  **Header Params**
+
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | X-token               | Y        | authentication token                |
+
+*  **URL Params**
+
+  None
+  
+* **Query Params**
+
+  None
+  
+* **Request Body:**
+
+   ```
+   {
+	"sourceAccountId":2002000000,
+	"targetAccounts":[1811000022],
+	"unitCreditInstanceId":2883928,
+	"units":120400
+   }
+   ```
+   
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** 
+      ```
+      {
+       "availableBalanceInCents": 0.0,
+       "accountId": 2002000000,
+       "currentBalanceInCents": 0.0,
+       "unitCreditInstances": [
+        {
+            "unitType": "Byte",
+            "accountId": 2002000000,
+            "unitCreditSpecificationId": 456,
+            "availableUnitsRemaining": 1.610612736E9,
+            "name": "Data Plan - 1.5GB",
+            "productInstanceId": 435625,
+            "currentUnitsRemaining": 1.610612736E9,
+            "unitCreditInstanceId": 5576605
+        },
+        {
+            "unitType": "SMS",
+            "accountId": 2002000000,
+            "unitCreditSpecificationId": 502,
+            "availableUnitsRemaining": 1000.0,
+            "name": "Free Onnet SMS",
+            "productInstanceId": 435625,
+            "currentUnitsRemaining": 1000.0,
+            "unitCreditInstanceId": 5576673
+        }
+        ]
+      }
+      ```
+      
+  * **Code:** 404 <br />
+    **Content:** 
+      ```
+      {
+        "SRAError": {
+        "errorDesc": "invalid account id",
+        "errorType": "business",
+        "errorCode": "SRA-0003"
+        }
+      }
+      ```    
+  
+## Share Airtime
+API to share airtime with other accounts. 
+
+* **URL**
+
+  /sra/accounts/sharedata
+
+* **Method:**
+
+  `POST`
+    
+*  **Header Params**
+
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | X-token               | Y        | authentication token                |
+
+*  **URL Params**
+
+  None
+  
+* **Query Params**
+
+  None
+  
+* **Request Body:**
+
+   ```
+   {
+	"sourceAccountId":1811000020,
+	"targetAccountId":1811000022,
+	"amountInCents":1000
+   }
+   ```
+   
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** 
+      ```
+      {
+       "availableBalanceInCents": 0.0,
+       "accountId": 2002000000,
+       "currentBalanceInCents": 0.0,
+       "status": 8
+      }
+      ```
+      
+  * **Code:** 404 <br />
+    **Content:** 
+      ```
+      {
+        "SRAError": {
+        "errorDesc": "invalid account id",
+        "errorType": "business",
+        "errorCode": "SRA-0003"
+        }
+      }
+      ```   
+  
+## Get Account History
 Get accounts usage history. 
 
 * **URL**
@@ -755,7 +896,7 @@ Get accounts usage history.
         }
       }
       ```
- ## Download Account History
+## Download Account History
 
 Download accounts usage history. 
 
