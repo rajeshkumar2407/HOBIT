@@ -1061,7 +1061,7 @@ API to buy airtime using payment gateways.
   * **Code:** 400 <br />
     **Content:** 
 
-## Sale Data Bundle Using Payment Gateway
+## Sale Bundle Using Payment Gateway
 
 API to buy data bundles using payment gateway. 
 
