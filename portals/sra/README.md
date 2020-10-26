@@ -1172,6 +1172,57 @@ API to buy data bundles using payment gateway.
       }
       ```
 
+## Sale Bundle Using Airtime
+
+API to buy data bundles using airtime. 
+
+* **URL**
+
+  /sra/sales/bundle
+
+* **Method:**
+
+  `POST`
+    
+*  **Header Params**
+
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | X-token               | Y        | authentication token                |
+
+*  **URL Params**
+
+   None
+  
+* **Query Params**
+
+   None
+  
+* **Request Body:**
+
+   ```
+   {
+    "accountId":1303000023,
+    "unitCreditSpecificationId":587,
+    "unitCreditName":"40GB Anytime Plan 37 Days",
+    "itemNumber":"BUN1040", 
+    "productInstanceId":0,
+    "numberToPurchase":1,
+    "paymentMethod":"Airtime",
+    "creditAccountNumber":"1303000023"
+   }
+   ```
+   
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** 
+      ```
+      {
+        "done": "TRUE"
+      }
+      ```
+
 ## Device Details
 
 Get details of all the available devices in selected customers account. 
