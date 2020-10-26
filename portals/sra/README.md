@@ -626,7 +626,8 @@ Get accounts of logged in user for smile number.
         }
       }
       ```
-## Share Data Bundle
+      
+## Share Data
 API to share data bundles with other accounts. 
 
 * **URL**
@@ -693,7 +694,7 @@ API to share data bundles with other accounts.
             "unitCreditInstanceId": 5576673
         }
         ]
-      }
+       }
       ```
       
   * **Code:** 404 <br />
