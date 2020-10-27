@@ -5,6 +5,7 @@
     - [Login](#login)
     - [Get Customer Details](#get-customer-details)
     - [Get Customer Without Token](#get-customer-without-token)
+    - [Get Customer KYC Deatils](#get-customer-kyc-details)
     - [Change Password](#change-password)
     - [Forget Password](#forget-password)
     - [Get Accounts](#get-accounts)
@@ -317,6 +318,86 @@ Get personal details of a customer without using token.
         "alternativeContact1": "11132450",
         "alternativeContact2": "22232450",
         "emailAddress": "rajesh.kumar@smilecoms.com"
+      }
+      ```
+ 
+* **Error Response:**
+
+  * **Code:** 404 <br />
+    **Content:** 
+      ```
+      {
+        "SRAError": {
+          "errorDesc": "Customer not found",
+          "errorType": "business",
+          "errorCode": "SRA-0053"
+        }
+      }
+      ```
+      
+  * **Code:** 401 <br />
+    **Content:** 
+      ```
+      {
+        "SRAError": {
+          "errorDesc": "Token is invalid or expired -- f13db56a-5078-48b6-a771-cb9d17546752",
+          "errorType": "business",
+          "errorCode": "SRA-0003"
+        }
+      }
+      ```
+      
+## Get Customer KYC Details
+
+Get customer's KYC details. 
+
+* **URL**
+
+  /sra/customers/{customer_id}/kycdetail
+
+* **Method:**
+
+  `GET`
+    
+*  **Header Params**
+
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | X-token               | Y        | authentication token                |
+
+*  **URL Params**
+
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | customer_id           | Y        | customer's profile id               |
+  
+  
+* **Query Params**
+
+   None
+  
+* **Request Body:**
+
+   None
+   
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** 
+      ```
+      {
+          "emailVerified": "Y",
+          "titleVerified": "Y",
+          "nationalityVerified": "Y",
+          "dobVerified": "Y",
+          "facialPitureVerified": "Y",
+          "customerId": 32450,
+          "physicalAddressVerified": "Y",
+          "mobileVerified": "N",
+          "fingerPrintVerified": "N",
+          "genderVerified": "Y",
+          "nameVerified": "Y",
+          "validIdCardVerified": "Y"
       }
       ```
  
