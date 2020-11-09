@@ -13,6 +13,7 @@
     - [Get Account History](#get-account-history)
     - [Download Account History](#download-account-history)
     - [Get Bundles](#get-bundles)
+    - [Get Extra Bundles](#get-extra-bundles)
     - [Redeem Voucher](#redeem-voucher)
     - [Sale Airtime Using Payment Gateway](#sale-airtime-using-payment-gateway)
     - [Sale Bundle Using Payment Gateway](#sale-bundle-using-payment-gateway)
@@ -1087,6 +1088,83 @@ Get list of all the bundles available for the logged in user.
         ],
         "validityDays": 37
        }
+      ]
+      ```
+ 
+* **Error Response:**
+      
+  * **Code:** 401 <br />
+    **Content:** 
+      ```
+      {
+        "SRAError": {
+          "errorDesc": "Token is invalid or expired -- f13db56a-5078-48b6-a771-cb9d17546752",
+          "errorType": "business",
+          "errorCode": "SRA-0003"
+        }
+      }
+      ```
+      
+## Get Extra Bundles
+
+Get list of extra bundles available for specific bundle. 
+
+* **URL**
+
+  /sra/catalogs/extrabundles/{ucID}
+
+* **Method:**
+
+  `GET`
+    
+*  **Header Params**
+
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | X-token               | Y        | authentication token                |
+
+*  **Query Params**
+
+   None  
+   
+*  **Path Params**
+
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | ucID                  | Y        | bundle specification id             |
+  
+* **Request Body:**
+
+   None
+   
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** 
+      ```
+      [
+      {
+        "unitType": "Byte",
+        "itemNumber": "BUN9106",
+        "usableDays": 30,
+        "unitCreditSpecificationId": 437,
+        "priceInCents": 255952.0,
+        "name": "5GB UPSize 30 days",
+        "description": "5GB UPSize 30 days",
+        "units": 5.36870912E9,
+        "validityDays": 37
+      },
+      {
+        "unitType": "Byte",
+        "itemNumber": "BUN9105",
+        "usableDays": 30,
+        "unitCreditSpecificationId": 436,
+        "priceInCents": 153571.0,
+        "name": "3GB UPSize 30 days",
+        "description": "3GB UPSize 30 days",
+        "units": 3.221225472E9,
+        "validityDays": 37
+      }
       ]
       ```
  
