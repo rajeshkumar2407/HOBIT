@@ -1277,7 +1277,7 @@ API to buy airtime using payment gateways.
    {
 	"sale":{
 		"saleTotalCentsIncl":10000.00,
-		"saleLines":[{"inventoryItem":{"serialNumber":"AIRTIME","description":"AIRTIME","itemNumber":"AIR1004","warehouseId":"","priceInCentsIncl":100.00},"quantity":100}],
+		"saleLines":[{"inventoryItem": {"serialNumber":"AIRTIME","description":"AIRTIME","itemNumber":"AIR1004","warehouseId":"","priceInCentsIncl":100.00},"quantity":100}],
 	    "paymentMethod":"Payment Gateway",
 	    "paymentGatewayCode":"Paystack",
 	    "recipientCustomerId":50891,
@@ -1337,7 +1337,7 @@ API to buy airtime using payment gateways.
         "taxExempt": false,
         "extTxId": "30eda74a-ab02-4c3a-893b-47b2e47821a4",
         "promotionCode": "",
-        "paymentGatewayURLData": "POST: amount=10000,callback_url=http://41.169.133.180:8004/scp/Login.action?postPaymentRedirect#&OrderId#11028399,reference=11028399,email=50891@smilecoms.com",
+        "paymentGatewayURLData": "POST: amount=10000,callback_url=http://41.169.133.180:8004/scp/Login.action,
         "creditAccountNumber": "ACC006",
         "recipientCustomerId": 50891,
         "organisationName": "",
@@ -1386,7 +1386,11 @@ API to buy data bundles using payment gateway.
   
 * **Query Params**
 
-   None
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | gatewayCode           | Y        | payment gateway code                |
+  | recipientPhoneNumber  | N        | customer's phone no                 |
+  | extraUccId            | N        | extra bundle ID                     |
   
 * **Request Body:**
 
