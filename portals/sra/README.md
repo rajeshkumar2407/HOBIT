@@ -1291,6 +1291,7 @@ API to buy airtime using payment gateways.
 
   * **Code:** 200 <br />
     **Content:** 
+    
       ```
         {
         "sale": {
