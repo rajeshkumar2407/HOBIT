@@ -1392,8 +1392,8 @@ API to buy data bundles using payment gateway.
   | gatewayCode           | Y        | payment gateway code                |
   | recipientPhoneNumber  | N        | customer's phone no                 |
   | extraUccId            | N        | extra bundle ID                     |
-  | gsmServiceProvider    | N        | GSM service provider(for Yo Uganda) |
-  
+  | walletProvider        | N        | Wallet provider(for Yo Uganda)      |
+   
 * **Request Body:**
 
    ```
