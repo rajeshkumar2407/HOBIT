@@ -1269,7 +1269,9 @@ API to buy airtime using payment gateways.
   
 * **Query Params**
 
-   None
+  | Parameter             | Required | Description                                               |
+  | --------------------- |:--------:| ---------------------------------------------------------:|
+  | walletProvider        | N        |Yo Payment wallet provider(eg. Airtel, MTN)                |
   
 * **Request Body:**
 
