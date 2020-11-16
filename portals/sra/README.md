@@ -1272,6 +1272,7 @@ API to buy airtime using payment gateways.
   | Parameter             | Required | Description                                               |
   | --------------------- |:--------:| ---------------------------------------------------------:|
   | walletProvider        | N        |Yo Payment wallet provider(eg. Airtel, MTN)                |
+  | recipientPhoneNumber  | N        |Phone number linked with Yo payment wallet                 |
   
 * **Request Body:**
 
