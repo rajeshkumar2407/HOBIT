@@ -1576,6 +1576,7 @@ Get details of all the available devices in selected customers account.
         "serialNumber": "2993929994938112",
         "lastUsedDate": "2020-09-07 12:23:20",
         "description": "Sim Cards",
+	"smileNumber":"07020029392",
         "purchageDate": "2020-07-01 09:23:32",
         "activationDate": "2020-07-01 12:30:40",
         "deviceName": "SIM"
@@ -1584,6 +1585,7 @@ Get details of all the available devices in selected customers account.
         "serialNumber": "2993929994938112",
         "lastUsedDate": "2020-09-07 12:23:20",
         "description": "Mobile Router Franklin B711 LTE",
+	"smileNumber":"07020029392",
         "purchageDate": "2020-07-01 09:23:32",
         "activationDate": "2020-07-01 12:30:40",
         "deviceName": "MIF6000"
