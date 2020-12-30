@@ -856,7 +856,7 @@ Get accounts usage history.
 
 * **URL**
 
-  /sra/accounts/{account_no}/allhistory?dateFrom={from_date}&dateTo={to_date}&resultLimit={record_size}&recordType={record_type}
+  /sra/accounts/{account_no}/allhistory?dateFrom={from_date}&dateTo={to_date}&resultLimit={record_size}&offset={offset}&recordType={record_type}
 
 * **Method:**
 
@@ -881,6 +881,7 @@ Get accounts usage history.
   | dateFrom              | N        | record start date                   |
   | dateTo                | N        | record end date                     |
   | resultLimit           | N        | number of records                   |
+  | offset                | N        | page offset starts with 0           |
   | recordType            | N        | type of records                     |
   
 * **Request Body:**
