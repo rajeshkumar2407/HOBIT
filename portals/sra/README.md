@@ -223,6 +223,7 @@ Get personal details for loged in user.
         "createdByCustomerProfileId": 7054,
         "emailAddress": "rajesh.kumar@smilecoms.com",
         "identityNumber": "32450",
+	"nationalIdentityNumber": "2883939499283",
         "customerId": 32450,
         "SSOIdentity": "raj",
         "accountManagerCustomerProfileId": 7054,
