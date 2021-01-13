@@ -26,6 +26,7 @@
     - [Get Notifications](#get-notifications)
     - [Update Profile Photo](#update-profile-photo)
     - [Get Profile Photo](#get-profile-photo)
+    - [Get International Call Rates](#get-international-call-rates)
 
 
 ## Registration
@@ -1860,4 +1861,141 @@ download customer's profile photo.
     **Content:** 
       ```
       pfofile picture in application/octet-stream response type
+      ```
+
+## Get International Call Rates
+
+Get international call rates. 
+
+* **URL**
+
+  /sra/catalogs/internationalrates
+
+* **Method:**
+
+  `GET`
+    
+*  **Header Params**
+
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | X-token               | Y        | authentication token                |
+
+*  **URL Params**
+
+   None
+  
+* **Query Params**
+
+   None
+  
+* **Request Body:**
+
+   None
+   
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** 
+      ```
+      [
+      {
+        "country": "Afghanistan",
+        "centsPerUnit": 2800,
+        "service": "SMS",
+        "mib": 71.68,
+        "unitCreditName": " 100GB BumpaValue "
+      },
+      {
+        "country": "Afghanistan",
+        "centsPerUnit": 2800,
+        "service": "SMS",
+        "mib": 95.5733333333,
+        "unitCreditName": " 1GB FlexiDaily"
+      },
+      {
+        "country": "Afghanistan",
+        "centsPerUnit": 2800,
+        "service": "SMS",
+        "mib": 143.36,
+        "unitCreditName": " 2.5GB FlexiDaily"
+      },
+      {
+        "country": "Afghanistan",
+        "centsPerUnit": 2800,
+        "service": "SMS",
+        "mib": 57.344,
+        "unitCreditName": " 2GB FlexiWeekly "
+      },
+      {
+        "country": "Albania",
+        "centsPerUnit": 272,
+        "service": "Voice",
+        "mib": 9.2842666667,
+        "unitCreditName": " 50GB BumpaValue "
+      },
+      {
+        "country": "Albania",
+        "centsPerUnit": 272,
+        "service": "Voice",
+        "mib": 11.14112,
+        "unitCreditName": " 6GB FlexiWeekly "
+      },
+      {
+        "country": "Albania",
+        "centsPerUnit": 272,
+        "service": "Voice",
+        "mib": 7.4274133333,
+        "unitCreditName": " 80GB BumpaValue "
+      },
+      {
+        "country": "Albania",
+        "centsPerUnit": 272,
+        "service": "Voice",
+        "mib": 6.9632,
+        "unitCreditName": " 90GB Anytime  "
+      },
+      {
+        "country": "Albania",
+        "centsPerUnit": 272,
+        "service": "Voice",
+        "mib": 4.17792,
+        "unitCreditName": "1.5GB Bigga"
+      },
+      {
+        "country": "Albania",
+        "centsPerUnit": 272,
+        "service": "Voice",
+        "mib": 6.1895111111,
+        "unitCreditName": "100GB Anytime plan (30 days)"
+      },
+      {
+        "country": "Albania",
+        "centsPerUnit": 272,
+        "service": "Voice",
+        "mib": 15.4737777778,
+        "unitCreditName": "100GB Bigga"
+      },
+      {
+        "country": "Albania",
+        "centsPerUnit": 272,
+        "service": "Voice",
+        "mib": 5.4470925684,
+        "unitCreditName": "15GB SpeedBooster"
+      }
+      ]
+      ```
+ 
+* **Error Response:**
+      
+  * **Code:** 401 <br />
+    **Content:** 
+      ```
+      {
+        "SRAError": {
+          "errorDesc": "Token is invalid or expired -- f13db56a-5078-48b6-a771-cb9d17546752",
+          "errorType": "business",
+          "errorCode": "SRA-0003"
+        }
+      }
       ```
