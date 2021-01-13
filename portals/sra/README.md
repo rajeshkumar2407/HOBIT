@@ -1642,6 +1642,122 @@ API to buy data bundles using airtime.
         "done": "TRUE"
       }
       ```
+## Get Sale Status
+
+Get sale status using sale id. 
+
+* **URL**
+
+  /sra/sales/{saleId}?by=saleId
+
+* **Method:**
+
+  `GET`
+    
+*  **Header Params**
+
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | X-token               | Y        | authentication token                |
+
+*  **URL Params**
+
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | saleId                | Y        | sale id                             |
+  
+* **Query Params**
+
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | by                    | Y        | "saleId" or "saleLineId"            |
+  
+* **Request Body:**
+
+   None
+   
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** 
+      ```
+      {
+        "sale": {
+        "saleId": 39215439,
+        "paymentGatewayLastPollDate": 0,
+        "channel": "44WVAN01",
+        "tenderedCurrency": "NGN",
+        "saleDate": 1610527585000,
+        "amountTenderedCents": 102000,
+        "salesPersonCustomerId": 76009,
+        "saleLines": [
+            {
+                "lineTotalDiscountOnInclCents": 0,
+                "inventoryItem": {
+                    "itemNumber": "BUNV0135",
+                    "boxSize": 0,
+                    "priceInCentsExcl": 94883.72,
+                    "serialNumber": "",
+                    "warehouseId": "",
+                    "priceInCentsIncl": 102000,
+                    "description": "SmileVoice Bundle 135mins 30 days",
+                    "currency": "NGN",
+                    "stockLevel": 1
+                },
+                "quantity": 1,
+                "lineId": 42819563,
+                "parentLineId": 0,
+                "lineTotalCentsIncl": 102000,
+                "lineTotalCentsExcl": 94883.72,
+                "subSaleLines": [],
+                "lineTotalDiscountOnExclCents": 0,
+                "returns": [],
+                "lineNumber": 1,
+                "provisioningData": "DaysGapBetweenStart=0\r\nToAccountId=2011002737\r\nNoKits=true\r\nPostProcessed=true\r\nPPDate=2021/01/13 09:46:25"
+            }
+        ],
+        "paymentGatewayPollCount": 0,
+        "recipientAccountId": 2011002737,
+        "tillId": "",
+        "purchaseOrderData": "",
+        "taxExempt": false,
+        "extTxId": "168295164",
+        "promotionCode": "",
+        "creditAccountNumber": "VAL003",
+        "recipientCustomerId": 703227,
+        "organisationName": "Abbeygold ICT Solutions",
+        "recipientOrganisationId": 11847,
+        "withholdingTaxRate": 0,
+        "saleTotalCentsIncl": 102000,
+        "salesPersonAccountId": 1506006053,
+        "contractSaleId": 0,
+        "paymentGatewayNextPollDate": 0,
+        "recipientPhoneNumber": "2349017692609",
+        "warehouseId": "",
+        "contractId": 0,
+        "paymentMethod": "Clearing Bureau",
+        "paymentTransactionData": "",
+        "extraInfo": "PaidDate=2021/01/13",
+        "saleTotalTaxCents": 7116.28,
+        "status": "PD"
+        }
+      }
+      ```
+ 
+* **Error Response:**
+      
+  * **Code:** 401 <br />
+    **Content:** 
+      ```
+      {
+        "SRAError": {
+          "errorDesc": "Token is invalid or expired -- f13db56a-5078-48b6-a771-cb9d17546752",
+          "errorType": "business",
+          "errorCode": "SRA-0003"
+        }
+      }
+      ```
+
 
 ## Device Details
 
