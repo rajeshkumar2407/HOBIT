@@ -904,7 +904,7 @@ API to share airtime with other accounts.
 
 * **URL**
 
-  /sra/accounts/sharedata
+  /sra/accounts/shareairtime
 
 * **Method:**
 
