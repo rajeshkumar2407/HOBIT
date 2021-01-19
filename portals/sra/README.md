@@ -1143,11 +1143,11 @@ Download accounts usage history.
 
 ## Get Bundles
 
-Get list of all the bundles available for the logged in user. 
+Get list of all the bundles available for the logged in user for selected account. 
 
 * **URL**
 
-  /sra/catalogs/bundles
+  /sra/catalogs/accountbundles/{accountId}
 
 * **Method:**
 
@@ -1159,9 +1159,11 @@ Get list of all the bundles available for the logged in user.
   | --------------------- |:--------:| -----------------------------------:|
   | X-token               | Y        | authentication token                |
 
-*  **Query Params**
+*  **Path Params**
 
-   None  
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | accountId             | Y        | customer account ID                 |  
   
 * **Request Body:**
 
