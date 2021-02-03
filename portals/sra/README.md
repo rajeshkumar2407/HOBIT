@@ -6,6 +6,7 @@
     - [Get Customer Details](#get-customer-details)
     - [Update Customer NIN](#update-customer-nin)
     - [Get Customer Without Token](#get-customer-without-token)
+    - [Get Customer Accounts For Express Recharge](#get-customer-accounts-for-express-recharge)
     - [Get Customer KYC Deatils](#get-customer-kyc-details)
     - [Change Password](#change-password)
     - [Forget Password](#forget-password)
@@ -192,6 +193,113 @@ Get personal details for loged in user.
   | Parameter             | Required | Description                         |
   | --------------------- |:--------:| -----------------------------------:|
   | identifier            | Y        | customer's id or email or username  |
+  
+* **Query Params**
+
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | by                    | Y        | identifier type. ie id or username  |
+  | verbosity             | N        | CUSTOMER_PHOTO for customer's photo |
+  
+* **Request Body:**
+
+   None
+   
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** 
+      ```
+      {
+        "customer": {
+        "lastName": "kumar",
+        "addresses": [],
+        "gender": "M",
+        "kycStatus": "V", // V:Verified, U:Unverifies, P:Pending
+        "createdDateTime": 1418491489000,
+        "identityNumberType": "",
+        "language": "en",
+        "passportExpiryDate": "",
+        "mothersMaidenName": "MMN_32450",
+        "products": [],
+        "customerStatus": "AC",
+        "createdByCustomerProfileId": 7054,
+        "emailAddress": "rajesh.kumar@smilecoms.com",
+        "identityNumber": "32450",
+        "nationalIdentityNumber": "2883939499283",
+        "customerId": 32450,
+        "SSOIdentity": "raj",
+        "accountManagerCustomerProfileId": 7054,
+        "optInLevel": 7,
+        "alternativeContact1": "11132450",
+        "dateOfBirth": "19860724",
+        "alternativeContact2": "22232450",
+        "classification": "customer",
+        "outstandingTermsAndConditions": [],
+        "version": 6,
+        "firstName": "rajesh",
+        "nationality": "NG",
+        "warehouseId": "",
+        "customerPhotographs": [],
+        "middleName": "",
+        "securityGroups": [
+            "Customer",
+            "TPGW"
+        ],
+        "customerRoles": []
+        }
+      }
+      ```
+ 
+* **Error Response:**
+
+  * **Code:** 404 <br />
+    **Content:** 
+      ```
+      {
+        "SRAError": {
+          "errorDesc": "Customer not found",
+          "errorType": "BUSINESS",
+          "errorCode": "SRA-00013"
+        }
+      }
+      ```
+      
+  * **Code:** 401 <br />
+    **Content:** 
+      ```
+      {
+        "SRAError": {
+          "errorDesc": "Token is invalid or expired -- f13db56a-5078-48b6-a771-cb9d17546752",
+          "errorType": "business",
+          "errorCode": "SRA-0003"
+        }
+      }
+      ```
+      
+## Get Customer Accounts For Express Recharge
+
+Get customer accounts for express recharge using email address or smile number. 
+
+* **URL**
+
+  /sra/customers/{email | smilevoice}?by=[email | smilevoice]&verbosity=CUSTOMER_ADDRESS_PRODUCTS_SERVICES
+
+* **Method:**
+
+  `GET`
+    
+*  **Header Params**
+
+  | Parameter             | Required | Description                                                 |
+  | --------------------- |:--------:| -----------------------------------------------------------:|
+  | X-token               | Y        | authentication token. predefined token for express recharge |
+
+*  **URL Params**
+
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | by                    | Y        | should be 'email' or 'smilevoice'   |
   
 * **Query Params**
 
