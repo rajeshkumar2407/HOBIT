@@ -320,41 +320,111 @@ Get customer accounts for express recharge using email address or smile number.
       {
         "customer": {
         "lastName": "kumar",
-        "addresses": [],
+        "addresses": [
+            {
+                "country": "Nigeria",
+                "code": "",
+                "organisationId": 0,
+                "town": "",
+                "type": "Physical Address",
+                "addressId": 33155,
+                "zone": "Lagos Island",
+                "customerId": 32450,
+                "state": "Lagos",
+                "postalMatchesPhysical": false,
+                "line2": "Test Environment L2",
+                "line1": "Test Environment L1"
+            }
+        ],
+        "kycStatus": "P",
         "gender": "M",
-        "kycStatus": "V", // V:Verified, U:Unverifies, P:Pending
         "createdDateTime": 1418491489000,
         "identityNumberType": "",
+        "isNinVerified": "N",
         "language": "en",
         "passportExpiryDate": "",
         "mothersMaidenName": "MMN_32450",
-        "products": [],
-        "customerStatus": "AC",
-        "createdByCustomerProfileId": 7054,
-        "emailAddress": "rajesh.kumar@smilecoms.com",
-        "identityNumber": "32450",
-        "nationalIdentityNumber": "2883939499283",
-        "customerId": 32450,
-        "SSOIdentity": "raj",
-        "accountManagerCustomerProfileId": 7054,
-        "optInLevel": 7,
-        "alternativeContact1": "11132450",
-        "dateOfBirth": "19860724",
-        "alternativeContact2": "22232450",
-        "classification": "customer",
-        "outstandingTermsAndConditions": [],
-        "version": 6,
-        "firstName": "rajesh",
-        "nationality": "NG",
-        "warehouseId": "",
-        "customerPhotographs": [],
-        "middleName": "",
-        "securityGroups": [
-            "Customer",
-            "TPGW"
-        ],
-        "customerRoles": []
-        }
+        "products": [
+            {
+                "organisationId": 0,
+                "productInstanceId": 38217,
+                "promotionCode": "",
+                "createdDateTime": 1418491629000,
+                "productPhoneNumber": "07020029392",
+                "services": [
+                    {
+                        "serviceSpecificationId": 1,
+                        "productPromotionCode": "",
+                        "AVPs": [],
+                        "serviceICCID": "89234270000000401648",
+                        "productFriendlyName": "",
+                        "ratePlanId": 1,
+                        "productInstanceId": 38217,
+                        "createdDateTime": 1418491629000,
+                        "serviceInstanceId": 70886,
+                        "productOrganisationId": 0,
+                        "serviceName": "SIM Card",
+                        "productName": "Smile High Speed Internet",
+                        "productSegment": "Smile@Me",
+                        "serviceUser": "rajesh kumar",
+                        "accountId": 1412002181,
+                        "phoneNumber": "NA",
+                        "customerId": 32450,
+                        "serviceDescription": "Smile SIM Card for LTE Access",
+                        "productCustomerId": 32450,
+                        "productDescription": "Internet Access with different speed options",
+                        "status": "AC"
+                    },
+                    {
+                        "serviceSpecificationId": 4,
+                        "productPromotionCode": "",
+                        "AVPs": [],
+                        "serviceICCID": "89234270000000401648",
+                        "productFriendlyName": "",
+                        "ratePlanId": 2,
+                        "productInstanceId": 38217,
+                        "createdDateTime": 1418491629000,
+                        "serviceInstanceId": 70887,
+                        "productOrganisationId": 0,
+                        "serviceName": "Smile Internet Access",
+                        "productName": "Smile High Speed Internet",
+                        "productSegment": "Smile@Me",
+                        "serviceUser": "rajesh kumar",
+                        "accountId": 1412002181,
+                        "phoneNumber": "NA",
+                        "customerId": 32450,
+                        "serviceDescription": "Internet Access with variable speeds",
+                        "productCustomerId": 32450,
+                        "productDescription": "Internet Access with different speed options",
+                        "status": "AC"
+                    },
+                    {
+                        "serviceSpecificationId": 100,
+                        "productPromotionCode": "",
+                        "AVPs": [],
+                        "serviceICCID": "89234270000000401648",
+                        "productFriendlyName": "",
+                        "ratePlanId": 11,
+                        "productInstanceId": 38217,
+                        "createdDateTime": 1455097905000,
+                        "serviceInstanceId": 457109,
+                        "productOrganisationId": 0,
+                        "serviceName": "SmileVoice, Video, SMS",
+                        "productName": "Smile High Speed Internet",
+                        "productSegment": "Smile@Me",
+                        "serviceUser": "rajesh kumar",
+                        "accountId": 1412002181,
+                        "phoneNumber": "07020029392",
+                        "customerId": 32450,
+                        "serviceDescription": "SmileVoice, Video and SMS Access",
+                        "productCustomerId": 32450,
+                        "productDescription": "Internet Access with different speed options",
+                        "status": "AC"
+                    }
+                  ]
+               }
+            ]
+         }
       }
       ```
  
