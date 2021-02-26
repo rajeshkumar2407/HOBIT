@@ -11,6 +11,7 @@
     - [Change Password](#change-password)
     - [Forget Password](#forget-password)
     - [Get Accounts](#get-accounts)
+    - [Update Account Friendly Name](#update-account-friendly-name)
     - [Get Account for smile number](#get-account-for-smile-number)
     - [Get Account History](#get-account-history)
     - [Download Account History](#download-account-history)
@@ -544,6 +545,76 @@ Update customer's National Identification number.
           "errorType": "BUSINESS",
           "errorCode": "SRA-00013"
         }
+      }
+      ```
+      
+  * **Code:** 401 <br />
+    **Content:** 
+      ```
+      {
+        "SRAError": {
+          "errorDesc": "Token is invalid or expired -- f13db56a-5078-48b6-a771-cb9d17546752",
+          "errorType": "business",
+          "errorCode": "SRA-0003"
+        }
+      }
+      ```
+      
+## Update account friendly name
+
+Update account's friendly name. 
+
+* **URL**
+
+  /sra/accounts/{accountId}/alias?friendlyName={friendly name}
+
+* **Method:**
+
+  `PUT`
+    
+*  **Header Params**
+
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | X-token               | Y        | authentication token                |
+
+*  **URL Params**
+
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | accountId             | Y        | account id                          |
+  
+* **Query Params**
+ 
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | friendlyName          | Y        | new friendly name                   |
+  
+* **Request Body:**
+
+   None
+   
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** 
+      ```
+      {
+        "SCAContext": {
+        "roles": [],
+        "obviscated": "ok"
+      },
+      "done": "TRUE"
+      }
+      ```
+ 
+* **Error Response:**
+
+  * **Code:** 200 <br />
+    **Content:** 
+      ```
+      {
+        "done": "FALSE"
       }
       ```
       
