@@ -12,6 +12,7 @@
     - [Forget Password](#forget-password)
     - [Get Accounts](#get-accounts)
     - [Update Account Friendly Name](#update-account-friendly-name)
+    - [Optout Optin Messages](#optout-optin-messages)
     - [Get Account for smile number](#get-account-for-smile-number)
     - [Get Account History](#get-account-history)
     - [Download Account History](#download-account-history)
@@ -617,6 +618,63 @@ Update account's friendly name.
         "done": "FALSE"
       }
       ```
+      
+  * **Code:** 401 <br />
+    **Content:** 
+      ```
+      {
+        "SRAError": {
+          "errorDesc": "Token is invalid or expired -- f13db56a-5078-48b6-a771-cb9d17546752",
+          "errorType": "business",
+          "errorCode": "SRA-0003"
+        }
+      }
+      ```
+ 
+## Optout Optin Messages
+
+Optout/Optin smile commercial messages. 
+
+* **URL**
+
+  /sra/customers/optout?email={email_address}&value={optin level}
+
+* **Method:**
+
+  `PUT`
+    
+*  **Header Params**
+
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | X-token               | Y        | authentication token                |
+
+*  **URL Params**
+
+   None
+  
+* **Query Params**
+ 
+  | Parameter             | Required | Description                         |
+  | --------------------- |:--------:| -----------------------------------:|
+  | email                 | Y        | customer email address              |
+  | value                 | Y        | 0:complete optout, 7: complete optin|
+  
+* **Request Body:**
+
+   None
+   
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** 
+      ```
+       {
+         "done": true
+       }
+      ```
+ 
+* **Error Response:**
       
   * **Code:** 401 <br />
     **Content:** 
